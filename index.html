@@ -133,18 +133,6 @@
         height: 300px;
       }
 
-      /* Scroll reveal animations */
-      .reveal {
-        opacity: 0;
-        transform: translateY(40px);
-        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-
-      .reveal.active {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
       /* Noise texture overlay */
       .noise-overlay {
         position: fixed;
@@ -688,31 +676,12 @@
             ></a>
           </div>
         </div>
-        <!-- Scroll indicator -->
-        <div
-          class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce hidden md:flex"
-        >
-          <span
-            class="text-xs uppercase tracking-widest font-semibold"
-            style="color: #007fee"
-            >Scroll</span
-          >
-          <div
-            class="w-6 h-10 rounded-full border-2 flex justify-center pt-2"
-            style="border-color: #007fee"
-          >
-            <div
-              class="w-1.5 h-1.5 rounded-full"
-              style="background-color: #007fee"
-            ></div>
-          </div>
-        </div>
       </section>
       <!-- About Section -->
       <section id="about" class="py-16 md:py-32 px-4 md:px-6 bg-white">
         <div class="max-w-7xl mx-auto">
           <div class="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
-            <div class="reveal">
+            <div>
               <span
                 class="text-xs md:text-sm uppercase tracking-widest mb-4 block font-semibold"
                 style="color: #007fee"
@@ -796,7 +765,7 @@
                 </div>
               </div>
             </div>
-            <div class="reveal" style="transition-delay: 0.2s">
+            <div>
               <div class="relative">
                 <div
                   class="relative p-6 md:p-8 rounded-3xl border-2"
@@ -863,7 +832,7 @@
       <!-- Universes Section -->
       <section id="universes" class="py-16 md:py-32 px-4 md:px-6 bg-white">
         <div class="max-w-7xl mx-auto">
-          <div class="text-center mb-12 md:mb-20 reveal">
+          <div class="text-center mb-12 md:mb-20">
             <span
               class="text-xs md:text-sm uppercase tracking-widest mb-4 block font-semibold"
               style="color: #f7bb20"
@@ -884,7 +853,7 @@
           <div class="grid md:grid-cols-3 gap-6 md:gap-8">
             <!-- Gamer Universe - Red -->
             <article
-              class="universe-card card-gamer relative rounded-3xl p-6 md:p-8 border-2 reveal"
+              class="universe-card card-gamer relative rounded-3xl p-6 md:p-8 border-2"
             >
               <h3
                 class="font-display text-2xl md:text-3xl font-bold mb-3"
@@ -916,8 +885,7 @@
             </article>
             <!-- Rótulos Universe - Yellow -->
             <article
-              class="universe-card card-rotulos relative rounded-3xl p-6 md:p-8 border-2 reveal"
-              style="transition-delay: 0.15s"
+              class="universe-card card-rotulos relative rounded-3xl p-6 md:p-8 border-2"
             >
               <h3
                 class="font-display text-2xl md:text-3xl font-bold mb-3"
@@ -949,8 +917,7 @@
             </article>
             <!-- For Everyone Universe - Green -->
             <article
-              class="universe-card card-minimal relative rounded-3xl p-6 md:p-8 border-2 reveal"
-              style="transition-delay: 0.3s"
+              class="universe-card card-minimal relative rounded-3xl p-6 md:p-8 border-2"
             >
               <h3
                 class="font-display text-2xl md:text-3xl font-bold mb-3"
@@ -971,7 +938,7 @@
                 </p>
               </div>
               <a
-                href="https://rotulosweb.vercel.app/"
+                href="https://minimal2delulu.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="btn-universe inline-block w-full py-3 text-white rounded-xl font-semibold hover:opacity-90 transition-opacity text-center shadow-md text-sm md:text-base"
@@ -988,7 +955,7 @@
         id="contact"
         class="py-16 md:py-32 px-4 md:px-6 relative overflow-hidden bg-white"
       >
-        <div class="max-w-4xl mx-auto text-center relative z-10 reveal">
+        <div class="max-w-4xl mx-auto text-center relative z-10">
           <h2
             class="font-display text-2xl md:text-5xl font-bold mb-4 md:mb-6"
             style="color: #f90f00"
@@ -1326,7 +1293,7 @@
         "universo|gamer|rótulos|everyone|lenguajes visuales":
           "Tenemos 3 universos visuales distintos:\n\n🎮 DELULU GAMER\nEstética retro-futurista y cultura digital\n\n🎨 DELULU RÓTULOS\nCultura popular mexicana reinterpretada\n\n✨ DELULU FOR EVERYONE\nDiseño minimalista e inclusivo\n\n¿Cuál te llama más la atención?",
         "portafolio|proyectos|ver trabajos|galería":
-          "Puedes ver nuestros trabajos en cada universo:\n\n🎮 delulufuturedev2.vercel.app\n🎨 delulufuturedevrotulosneon.vercel.app\n✨ rotulosweb.vercel.app",
+          "Puedes ver nuestros trabajos en cada universo:\n\n🎮 delulufuturedev2.vercel.app\n🎨 delulufuturedevrotulosneon.vercel.app\n✨ minimal2delulu.vercel.app",
         "equipo|quiénes somos|sobre ustedes|staff|equipo creativo":
           "Somos Delulu Future Dev, un estudio creativo independiente de nómadas digitales 🌍\n\nNuestro enfoque: Confianza + multidisciplina + intención\n\n¿Quieres conocer más sobre nuestro proceso?",
         "gamer|intensidad|retro|futurista":
@@ -1666,20 +1633,6 @@
         });
       }
 
-      // Scroll Reveal
-      function revealOnScroll() {
-        document.querySelectorAll(".reveal").forEach((el) => {
-          const windowHeight = window.innerHeight;
-          const elementTop = el.getBoundingClientRect().top;
-          if (elementTop < windowHeight - 150) {
-            el.classList.add("active");
-          }
-        });
-      }
-
-      window.addEventListener("scroll", revealOnScroll);
-      window.addEventListener("load", revealOnScroll);
-
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener("click", function (e) {
           e.preventDefault();
@@ -1697,7 +1650,7 @@
           if (b) {
             var d = b.createElement("script");
             d.innerHTML =
-              "window.__CF$cv$params={r:'9cd21ce2707ad08d',t:'MTc3MDk2MjUwNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+              "window.__CF$cv$params={r:'9cd2c4bfd59dd08d',t:'MTc3MDk2OTM4MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
             b.getElementsByTagName("head")[0].appendChild(d);
           }
         }
