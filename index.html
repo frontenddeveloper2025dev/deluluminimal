@@ -18,11 +18,13 @@
       }
 
       :root {
-        --bg-primary: #f5efe7;
+        --bg-primary: #ffffff;
         --text-primary: #1a1a1a;
-        --accent-gamer: #8b7355;
-        --accent-rotulos: #c9a876;
-        --accent-minimal: #6b5b4f;
+        --color-blue: #007fee;
+        --color-red: #f90f00;
+        --color-yellow: #f7bb20;
+        --color-green: #1fa524;
+        --color-dark-blue: #007fee;
       }
 
       html,
@@ -31,11 +33,12 @@
         padding: 0;
         height: 100%;
         width: 100%;
+        background: #ffffff;
       }
 
       body {
         font-family: "Space Grotesk", sans-serif;
-        background: var(--bg-primary);
+        background: #ffffff;
         color: var(--text-primary);
       }
 
@@ -43,50 +46,16 @@
         width: 100%;
         min-height: 100%;
         overflow-x: hidden;
+        background: #ffffff;
       }
 
       .font-display {
         font-family: "Syne", sans-serif;
       }
 
-      /* Animated gradient background */
+      /* Hero Section */
       .hero-gradient {
-        background: radial-gradient(
-            ellipse at 20% 20%,
-            rgba(139, 115, 85, 0.1) 0%,
-            transparent 50%
-          ),
-          radial-gradient(
-            ellipse at 80% 80%,
-            rgba(201, 168, 118, 0.08) 0%,
-            transparent 50%
-          ),
-          radial-gradient(
-            ellipse at 50% 50%,
-            rgba(107, 91, 79, 0.06) 0%,
-            transparent 50%
-          ),
-          #f5efe7;
-        animation: gradientShift 15s ease-in-out infinite;
-      }
-
-      @keyframes gradientShift {
-        0%,
-        100% {
-          background-position: 0% 0%, 100% 100%, 50% 50%;
-        }
-        50% {
-          background-position: 100% 100%, 0% 0%, 50% 50%;
-        }
-      }
-
-      /* Floating shapes */
-      .floating-shape {
-        position: absolute;
-        border-radius: 50%;
-        filter: blur(60px);
-        opacity: 0.2;
-        animation: float 20s ease-in-out infinite;
+        background: #ffffff;
       }
 
       @keyframes float {
@@ -109,73 +78,34 @@
         transform: translateY(-12px) scale(1.02);
       }
 
-      .universe-card::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        border-radius: 24px;
-        padding: 2px;
-        background: linear-gradient(
-          135deg,
-          var(--card-accent),
-          transparent 50%
-        );
-        -webkit-mask: linear-gradient(#fff 0 0) content-box,
-          linear-gradient(#fff 0 0);
-        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-        -webkit-mask-composite: xor;
-        mask-composite: exclude;
-        opacity: 0;
-        transition: opacity 0.5s ease;
-      }
-
-      .universe-card:hover::before {
-        opacity: 1;
-      }
-
-      /* Gamer card specific */
+      /* Gamer card - Red */
       .card-gamer {
-        --card-accent: #8b7355;
-        background: linear-gradient(
-          180deg,
-          rgba(139, 115, 85, 0.15) 0%,
-          rgba(245, 239, 231, 0.8) 100%
-        );
-        border-color: #d4c5b9 !important;
+        background: #fff5f5;
+        border-color: #f90f00 !important;
       }
 
       .card-gamer:hover {
-        box-shadow: 0 25px 80px -20px rgba(139, 115, 85, 0.25);
+        box-shadow: 0 25px 80px -20px rgba(249, 15, 0, 0.25);
       }
 
-      /* Rotulos card specific */
+      /* Rotulos card - Yellow */
       .card-rotulos {
-        --card-accent: #c9a876;
-        background: linear-gradient(
-          180deg,
-          rgba(201, 168, 118, 0.15) 0%,
-          rgba(245, 239, 231, 0.8) 100%
-        );
-        border-color: #d4c5b9 !important;
+        background: #fffef5;
+        border-color: #f7bb20 !important;
       }
 
       .card-rotulos:hover {
-        box-shadow: 0 25px 80px -20px rgba(201, 168, 118, 0.25);
+        box-shadow: 0 25px 80px -20px rgba(247, 187, 32, 0.25);
       }
 
-      /* Minimal card specific */
+      /* Minimal card - Green */
       .card-minimal {
-        --card-accent: #6b5b4f;
-        background: linear-gradient(
-          180deg,
-          rgba(107, 91, 79, 0.15) 0%,
-          rgba(245, 239, 231, 0.8) 100%
-        );
-        border-color: #d4c5b9 !important;
+        background: #f5fff5;
+        border-color: #1fa524 !important;
       }
 
       .card-minimal:hover {
-        box-shadow: 0 25px 80px -20px rgba(107, 91, 79, 0.25);
+        box-shadow: 0 25px 80px -20px rgba(31, 165, 36, 0.25);
       }
 
       /* Button animations */
@@ -215,20 +145,6 @@
         transform: translateY(0);
       }
 
-      /* Color swatches */
-      .color-swatch {
-        transition: transform 0.3s ease;
-      }
-
-      .color-swatch:hover {
-        transform: scale(1.2);
-      }
-
-      /* Glowing text effect */
-      .glow-text {
-        text-shadow: 0 0 40px rgba(139, 115, 85, 0.15);
-      }
-
       /* Noise texture overlay */
       .noise-overlay {
         position: fixed;
@@ -253,12 +169,365 @@
       }
 
       ::-webkit-scrollbar-track {
-        background: #f5efe7;
+        background: #ffffff;
       }
 
       ::-webkit-scrollbar-thumb {
-        background: linear-gradient(180deg, #8b7355, #c9a876, #6b5b4f);
+        background: #007fee;
         border-radius: 4px;
+      }
+
+      /* Chatbot Widget Styles */
+      .chatbot-widget {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 9998;
+      }
+
+      .chatbot-toggle {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: #007fee;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.5rem;
+        box-shadow: 0 4px 20px rgba(0, 127, 238, 0.4);
+        transition: all 0.3s ease;
+        font-family: "Space Grotesk", sans-serif;
+      }
+
+      .chatbot-toggle:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 30px rgba(0, 127, 238, 0.6);
+      }
+
+      .chatbot-toggle.active {
+        transform: rotate(90deg);
+      }
+
+      .chatbot-window {
+        position: absolute;
+        bottom: 80px;
+        right: 0;
+        width: 380px;
+        height: 600px;
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+        display: none;
+        flex-direction: column;
+        overflow: hidden;
+        animation: slideUp 0.3s ease;
+      }
+
+      .chatbot-window.active {
+        display: flex;
+      }
+
+      @keyframes slideUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Chat Header */
+      .chat-header {
+        background: #007fee;
+        color: white;
+        padding: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .chat-header h3 {
+        margin: 0;
+        font-size: 1rem;
+        font-family: "Syne", sans-serif;
+        font-weight: 700;
+      }
+
+      .chat-header p {
+        margin: 0;
+        font-size: 0.7rem;
+        opacity: 0.9;
+      }
+
+      .close-chat {
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+        font-size: 1.2rem;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Messages Area */
+      .messages-area {
+        flex: 1;
+        overflow-y: auto;
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        scroll-behavior: smooth;
+      }
+
+      .messages-area::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      .messages-area::-webkit-scrollbar-thumb {
+        background: #007fee;
+        border-radius: 3px;
+      }
+
+      /* Message */
+      .message {
+        display: flex;
+        gap: 8px;
+        animation: slideIn 0.3s ease;
+      }
+
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .message.user {
+        justify-content: flex-end;
+      }
+
+      .message-avatar {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 0.7rem;
+        flex-shrink: 0;
+      }
+
+      .message.bot .message-avatar {
+        background: #007fee;
+        color: white;
+      }
+
+      .message.user .message-avatar {
+        background: #1fa524;
+        color: white;
+      }
+
+      .message-content {
+        max-width: 70%;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .message-bubble {
+        padding: 10px 14px;
+        border-radius: 14px;
+        word-wrap: break-word;
+        font-size: 0.9rem;
+        line-height: 1.4;
+      }
+
+      .message.bot .message-bubble {
+        background: #e3f2fd;
+        color: #1a1a1a;
+        border-left: 3px solid #007fee;
+      }
+
+      .message.user .message-bubble {
+        background: #c8e6c9;
+        color: #1a1a1a;
+        border-right: 3px solid #1fa524;
+      }
+
+      .message-time {
+        font-size: 0.65rem;
+        opacity: 0.6;
+        padding: 0 8px;
+      }
+
+      .message.user .message-time {
+        text-align: right;
+      }
+
+      /* Typing Indicator */
+      .typing-indicator {
+        display: flex;
+        gap: 4px;
+        padding: 10px 14px;
+        background: #e3f2fd;
+        border-radius: 14px;
+        border-left: 3px solid #007fee;
+        width: fit-content;
+      }
+
+      .typing-dot {
+        width: 6px;
+        height: 6px;
+        background: #007fee;
+        border-radius: 50%;
+        animation: bounce 1.4s infinite;
+      }
+
+      .typing-dot:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+
+      .typing-dot:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+
+      @keyframes bounce {
+        0%,
+        80%,
+        100% {
+          transform: translateY(0);
+          opacity: 0.7;
+        }
+        40% {
+          transform: translateY(-6px);
+          opacity: 1;
+        }
+      }
+
+      /* Input Area */
+      .chat-input-area {
+        padding: 12px;
+        background: white;
+        border-top: 1px solid #e0e0e0;
+        display: flex;
+        gap: 6px;
+      }
+
+      .chat-input-form {
+        display: flex;
+        gap: 6px;
+        width: 100%;
+      }
+
+      .chat-input-field {
+        flex: 1;
+        padding: 10px 12px;
+        border: 1px solid #e0e0e0;
+        border-radius: 20px;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+      }
+
+      .chat-input-field:focus {
+        outline: none;
+        border-color: #007fee;
+        box-shadow: 0 0 0 2px rgba(0, 127, 238, 0.1);
+      }
+
+      .chat-send-btn {
+        padding: 10px 14px;
+        background: #007fee;
+        color: white;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 0.8rem;
+      }
+
+      .chat-send-btn:hover {
+        transform: scale(1.05);
+      }
+
+      .chat-send-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      /* Quick Questions Buttons */
+      .quick-question-btn {
+        padding: 10px 12px;
+        background: white;
+        border: 1.5px solid #007fee;
+        border-radius: 10px;
+        color: #007fee;
+        font-size: 0.8rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: "Space Grotesk", sans-serif;
+        text-align: left;
+      }
+
+      .quick-question-btn:hover {
+        background: #007fee;
+        color: white;
+        transform: scale(1.02);
+      }
+
+      #quick-questions {
+        display: grid;
+        gap: 8px;
+        width: 100%;
+        max-width: 320px;
+      }
+
+      @media (max-width: 768px) {
+        .chatbot-window {
+          width: calc(100vw - 40px);
+          height: calc(100vh - 140px);
+          bottom: 90px;
+          right: 20px;
+        }
+
+        .message-content {
+          max-width: 85%;
+        }
+      }
+
+      /* Mobile Menu Animation */
+      #mobile-menu {
+        animation: slideDown 0.3s ease-out;
+      }
+
+      @keyframes slideDown {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
     </style>
     <style>
@@ -274,19 +543,19 @@
       <div class="noise-overlay"></div>
       <!-- Navigation -->
       <nav
-        class="fixed top-0 left-0 right-0 z-50 px-6 py-4 backdrop-blur-md bg-white/30"
+        class="fixed top-0 left-0 right-0 z-50 px-3 md:px-6 py-3 md:py-4 backdrop-blur-md bg-white/95 md:bg-white/30"
       >
         <div class="max-w-7xl mx-auto flex items-center justify-between">
-          <div class="flex items-center gap-2">
-            <div
-              class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-700 via-amber-600 to-amber-800 flex items-center justify-center"
-            >
-              <span class="text-white font-bold text-lg">D</span>
-            </div>
-            <span class="font-display font-bold text-xl text-gray-900"
-              >DELULU</span
-            >
+          <div class="flex items-center gap-2 md:gap-3 flex-shrink-0">
+            <img
+              src="https://raw.githubusercontent.com/frontenddeveloper2025dev/deluluminimal/refs/heads/main/DELULU%203%20COLORS.png"
+              alt="Delulu Logo"
+              class="h-10 md:h-14 w-auto"
+              loading="lazy"
+              onerror="console.error('Logo failed to load:', this.src); this.style.display='none';"
+            />
           </div>
+          <!-- Desktop Menu -->
           <div class="hidden md:flex items-center gap-8">
             <a
               href="#about"
@@ -300,7 +569,56 @@
             >
             <a
               href="#contact"
-              class="px-4 py-2 bg-gray-200/50 rounded-full text-sm hover:bg-gray-300/50 transition-colors text-gray-900"
+              class="px-4 py-2 rounded-full text-sm hover:opacity-90 transition-opacity text-white font-semibold"
+              style="background-color: #007fee"
+              >Contacto</a
+            >
+          </div>
+          <!-- Mobile Menu Button -->
+          <button
+            class="md:hidden flex items-center justify-center w-10 h-10 rounded-lg hover:bg-gray-100 transition-colors flex-shrink-0"
+            id="mobile-menu-btn"
+            style="background-color: rgba(0, 127, 238, 0.1)"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewbox="0 0 24 24"
+              style="color: #007fee"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div
+          class="md:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-md border-t border-gray-200 hidden"
+          id="mobile-menu"
+        >
+          <div class="flex flex-col gap-2 p-4">
+            <a
+              href="#about"
+              class="px-4 py-3 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors font-medium"
+              onclick="closeMobileMenu()"
+              >Nosotros</a
+            >
+            <a
+              href="#universes"
+              class="px-4 py-3 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors font-medium"
+              onclick="closeMobileMenu()"
+              >Universos</a
+            >
+            <a
+              href="#contact"
+              class="px-4 py-3 rounded-lg text-white font-semibold hover:opacity-90 transition-opacity"
+              style="background-color: #007fee"
+              onclick="closeMobileMenu()"
               >Contacto</a
             >
           </div>
@@ -308,49 +626,42 @@
       </nav>
       <!-- Hero Section -->
       <section
-        class="hero-gradient min-h-screen relative overflow-hidden flex items-center"
+        class="hero-gradient min-h-screen relative overflow-hidden flex items-center justify-center pt-20 md:pt-20 px-4 md:px-6"
       >
-        <!-- Floating shapes -->
         <div
-          class="floating-shape w-96 h-96 bg-amber-700 -top-48 -left-48"
-          style="animation-delay: 0s"
-        ></div>
-        <div
-          class="floating-shape w-72 h-72 bg-amber-600 top-1/2 -right-36"
-          style="animation-delay: -5s"
-        ></div>
-        <div
-          class="floating-shape w-64 h-64 bg-amber-800 bottom-0 left-1/3"
-          style="animation-delay: -10s"
-        ></div>
-        <div class="max-w-7xl mx-auto px-6 py-32 relative z-10">
+          class="max-w-7xl mx-auto relative z-10 flex flex-col items-center text-center w-full"
+        >
           <div class="max-w-4xl">
+            <img
+              src="https://raw.githubusercontent.com/frontenddeveloper2025dev/deluluminimal/refs/heads/main/DELULU%203%20COLORS.png"
+              alt="Delulu Future Dev"
+              class="h-48 md:h-96 w-auto mx-auto mb-6 md:mb-12"
+              loading="lazy"
+              onerror="console.error('Logo failed to load:', this.src);"
+            />
             <div
-              class="inline-flex items-center gap-2 px-4 py-2 bg-gray-800/20 rounded-full border border-gray-800/30 mb-8"
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-full border-2 mb-6 md:mb-8 text-xs md:text-sm"
+              style="
+                background-color: rgba(0, 127, 238, 0.1);
+                border-color: #007fee;
+              "
             >
-              <span
-                class="w-2 h-2 rounded-full bg-amber-700 animate-pulse"
-              ></span>
-              <span class="text-sm text-gray-700"
+              <span class="font-semibold" style="color: #007fee"
                 >Estudio creativo independiente</span
               >
             </div>
-            <h1
-              id="hero-title"
-              class="font-display text-6xl md:text-8xl font-extrabold mb-6 glow-text leading-tight text-gray-900"
-            >
-              Delulu Future Dev
-            </h1>
             <p
               id="hero-subtitle"
-              class="text-xl md:text-2xl text-gray-700 mb-4 max-w-2xl leading-relaxed"
+              class="text-lg md:text-2xl text-gray-700 mb-4 max-w-2xl leading-relaxed mx-auto px-2 md:px-0"
             >
               Creatividad estratégica para marcas que quieren destacar sin
               excluir.
             </p>
-            <p class="text-lg text-gray-600 mb-12 max-w-xl">
+            <p
+              class="text-base md:text-lg text-gray-600 mb-8 md:mb-12 max-w-xl mx-auto px-2 md:px-0"
+            >
               Diseñamos universos visuales con intención.<br /><span
-                class="text-gray-900"
+                class="text-gray-900 font-semibold"
                 >Tres enfoques. Una visión:</span
               >
               impacto, identidad y experiencia.
@@ -358,11 +669,12 @@
             <a
               href="#universes"
               id="hero-cta"
-              class="btn-universe inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-amber-700 via-amber-600 to-amber-800 rounded-full font-semibold text-lg text-white hover:scale-105 transition-transform"
+              class="btn-universe inline-flex items-center justify-center gap-2 md:gap-3 px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold text-base md:text-lg text-white hover:scale-105 transition-transform shadow-lg"
+              style="background-color: #007fee"
             >
               <span>Explorar universos</span>
               <svg
-                class="w-5 h-5"
+                class="w-4 md:w-5 h-4 md:h-5"
                 fill="none"
                 stroke="currentColor"
                 viewbox="0 0 24 24"
@@ -378,78 +690,107 @@
         </div>
         <!-- Scroll indicator -->
         <div
-          class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce"
+          class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce hidden md:flex"
         >
-          <span class="text-xs text-gray-600 uppercase tracking-widest"
+          <span
+            class="text-xs uppercase tracking-widest font-semibold"
+            style="color: #007fee"
             >Scroll</span
           >
           <div
-            class="w-6 h-10 rounded-full border-2 border-gray-700 flex justify-center pt-2"
+            class="w-6 h-10 rounded-full border-2 flex justify-center pt-2"
+            style="border-color: #007fee"
           >
             <div
-              class="w-1.5 h-1.5 rounded-full bg-gray-900 animate-pulse"
+              class="w-1.5 h-1.5 rounded-full"
+              style="background-color: #007fee"
             ></div>
           </div>
         </div>
       </section>
       <!-- About Section -->
-      <section
-        id="about"
-        class="py-32 px-6 bg-gradient-to-b from-transparent to-gray-100/50"
-      >
+      <section id="about" class="py-16 md:py-32 px-4 md:px-6 bg-white">
         <div class="max-w-7xl mx-auto">
-          <div class="grid md:grid-cols-2 gap-16 items-center">
+          <div class="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
             <div class="reveal">
               <span
-                class="text-amber-700 font-semibold text-sm uppercase tracking-widest mb-4 block"
-                >🧠 Sobre nosotros</span
+                class="text-xs md:text-sm uppercase tracking-widest mb-4 block font-semibold"
+                style="color: #007fee"
+                >Sobre nosotros</span
               >
               <h2
                 id="about-heading"
-                class="font-display text-4xl md:text-5xl font-bold mb-8 text-gray-900"
+                class="font-display text-3xl md:text-5xl font-bold mb-6 md:mb-8"
+                style="color: #007fee"
               >
                 ¿Quiénes somos?
               </h2>
-              <p class="text-gray-700 text-lg mb-6 leading-relaxed">
+              <p
+                class="text-gray-700 text-base md:text-lg mb-4 md:mb-6 leading-relaxed"
+              >
                 Delulu Future Dev es un estudio creativo independiente enfocado
                 en diseño digital, identidad visual y experiencias inclusivas.
               </p>
-              <p class="text-xl font-semibold mb-6 text-gray-900">
+              <p class="text-lg md:text-xl font-semibold mb-6 text-gray-900">
                 No diseñamos solo para ver bonito.<br /><span
-                  class="text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-amber-600"
+                  style="color: #007fee"
                   >Diseñamos para conectar, representar y resolver.</span
                 >
               </p>
-              <div class="grid grid-cols-2 gap-4 mt-8">
+              <div class="grid grid-cols-2 gap-3 md:gap-4 mt-8">
                 <div
-                  class="p-4 bg-gray-200/50 rounded-xl border border-gray-300"
+                  class="p-3 md:p-4 rounded-xl border-2"
+                  style="
+                    background-color: rgba(0, 127, 238, 0.1);
+                    border-color: #007fee;
+                  "
                 >
-                  <div class="text-2xl mb-2">🎯</div>
-                  <h4 class="font-semibold mb-1 text-gray-900">
+                  <h4
+                    class="font-semibold text-sm md:text-base mb-1"
+                    style="color: #007fee"
+                  >
                     Dirección creativa
                   </h4>
                 </div>
                 <div
-                  class="p-4 bg-gray-200/50 rounded-xl border border-gray-300"
+                  class="p-3 md:p-4 rounded-xl border-2"
+                  style="
+                    background-color: rgba(0, 127, 238, 0.1);
+                    border-color: #007fee;
+                  "
                 >
-                  <div class="text-2xl mb-2">✨</div>
-                  <h4 class="font-semibold mb-1 text-gray-900">
+                  <h4
+                    class="font-semibold text-sm md:text-base mb-1"
+                    style="color: #007fee"
+                  >
                     Branding estratégico
                   </h4>
                 </div>
                 <div
-                  class="p-4 bg-gray-200/50 rounded-xl border border-gray-300"
+                  class="p-3 md:p-4 rounded-xl border-2"
+                  style="
+                    background-color: rgba(0, 127, 238, 0.1);
+                    border-color: #007fee;
+                  "
                 >
-                  <div class="text-2xl mb-2">💻</div>
-                  <h4 class="font-semibold mb-1 text-gray-900">
+                  <h4
+                    class="font-semibold text-sm md:text-base mb-1"
+                    style="color: #007fee"
+                  >
                     Diseño web &amp; producto
                   </h4>
                 </div>
                 <div
-                  class="p-4 bg-gray-200/50 rounded-xl border border-gray-300"
+                  class="p-3 md:p-4 rounded-xl border-2"
+                  style="
+                    background-color: rgba(0, 127, 238, 0.1);
+                    border-color: #007fee;
+                  "
                 >
-                  <div class="text-2xl mb-2">🎨</div>
-                  <h4 class="font-semibold mb-1 text-gray-900">
+                  <h4
+                    class="font-semibold text-sm md:text-base mb-1"
+                    style="color: #007fee"
+                  >
                     Cultura visual
                   </h4>
                 </div>
@@ -458,45 +799,58 @@
             <div class="reveal" style="transition-delay: 0.2s">
               <div class="relative">
                 <div
-                  class="absolute inset-0 bg-gradient-to-br from-amber-700/15 via-amber-600/15 to-amber-800/15 rounded-3xl blur-3xl"
-                ></div>
-                <div
-                  class="relative bg-gradient-to-br from-gray-100 to-gray-200 p-8 rounded-3xl border border-gray-300"
+                  class="relative p-6 md:p-8 rounded-3xl border-2"
+                  style="background-color: #e3f2fd; border-color: #007fee"
                 >
-                  <div class="text-6xl mb-6">🌌</div>
                   <h3
-                    class="font-display text-2xl font-bold mb-4 text-gray-900"
+                    class="font-display text-xl md:text-2xl font-bold mb-4"
+                    style="color: #007fee"
                   >
                     ¿Por qué 3 universos?
                   </h3>
-                  <p class="text-gray-700 mb-6">
+                  <p class="text-gray-700 mb-4 md:mb-6 text-sm md:text-base">
                     Porque no todas las marcas comunican igual.
                   </p>
-                  <ul class="space-y-3 text-gray-600">
+                  <ul class="space-y-3 text-gray-700 text-sm md:text-base">
                     <li class="flex items-center gap-3">
-                      <span class="w-2 h-2 rounded-full bg-amber-700"></span>
+                      <span
+                        class="w-2 h-2 rounded-full flex-shrink-0"
+                        style="background-color: #007fee"
+                      ></span>
                       Algunas necesitan
-                      <span class="text-amber-700 font-semibold"
+                      <span class="font-semibold" style="color: #007fee"
                         >intensidad</span
                       >
                     </li>
                     <li class="flex items-center gap-3">
-                      <span class="w-2 h-2 rounded-full bg-amber-600"></span>
+                      <span
+                        class="w-2 h-2 rounded-full flex-shrink-0"
+                        style="background-color: #007fee"
+                      ></span>
                       Otras necesitan
-                      <span class="text-amber-600 font-semibold"
+                      <span class="font-semibold" style="color: #007fee"
                         >cercanía cultural</span
                       >
                     </li>
                     <li class="flex items-center gap-3">
-                      <span class="w-2 h-2 rounded-full bg-amber-800"></span>
+                      <span
+                        class="w-2 h-2 rounded-full flex-shrink-0"
+                        style="background-color: #007fee"
+                      ></span>
                       Otras necesitan
-                      <span class="text-amber-800 font-semibold"
+                      <span class="font-semibold" style="color: #007fee"
                         >claridad y accesibilidad</span
                       >
                     </li>
                   </ul>
-                  <div class="mt-8 pt-6 border-t border-gray-300">
-                    <p class="text-sm text-gray-600 italic">
+                  <div
+                    class="mt-6 md:mt-8 pt-6"
+                    style="border-top-color: #007fee; border-top-width: 2px"
+                  >
+                    <p
+                      class="text-xs md:text-sm italic font-semibold"
+                      style="color: #007fee"
+                    >
                       "Confianza + multidisciplina + intención"
                     </p>
                   </div>
@@ -507,365 +861,687 @@
         </div>
       </section>
       <!-- Universes Section -->
-      <section id="universes" class="py-32 px-6">
+      <section id="universes" class="py-16 md:py-32 px-4 md:px-6 bg-white">
         <div class="max-w-7xl mx-auto">
-          <div class="text-center mb-20 reveal">
+          <div class="text-center mb-12 md:mb-20 reveal">
             <span
-              class="text-amber-700 font-semibold text-sm uppercase tracking-widest mb-4 block"
-              >✦ Nuestros universos ✦</span
+              class="text-xs md:text-sm uppercase tracking-widest mb-4 block font-semibold"
+              style="color: #f7bb20"
+              >Nuestros universos</span
             >
             <h2
-              class="font-display text-4xl md:text-6xl font-bold mb-6 text-gray-900"
+              class="font-display text-2xl md:text-6xl font-bold mb-4 md:mb-6 text-gray-900"
             >
               Tres lenguajes visuales
             </h2>
-            <p class="text-gray-700 text-lg max-w-2xl mx-auto">
+            <p
+              class="text-gray-700 text-base md:text-lg max-w-2xl mx-auto px-2"
+            >
               Diferentes estéticas para diferentes necesidades, sin perder
               coherencia estratégica.
             </p>
           </div>
-          <div class="grid md:grid-cols-3 gap-8">
-            <!-- Gamer Universe -->
+          <div class="grid md:grid-cols-3 gap-6 md:gap-8">
+            <!-- Gamer Universe - Red -->
             <article
-              class="universe-card card-gamer relative rounded-3xl p-8 border border-amber-700/30 reveal"
+              class="universe-card card-gamer relative rounded-3xl p-6 md:p-8 border-2 reveal"
             >
-              <div class="absolute top-6 right-6 text-4xl">🎮</div>
-              <span
-                class="inline-block px-3 py-1 bg-amber-700/20 text-amber-900 text-xs font-semibold rounded-full mb-6"
-                >UNIVERSO 01</span
+              <h3
+                class="font-display text-2xl md:text-3xl font-bold mb-3"
+                style="color: #f90f00"
               >
-              <h3 class="font-display text-3xl font-bold mb-2 text-amber-900">
                 DELULU GAMER
               </h3>
-              <p class="text-gray-700 text-sm mb-6">
-                Neón, retro, energía digital
-              </p>
-              <div class="space-y-4 mb-8">
-                <div>
-                  <h4
-                    class="text-xs uppercase tracking-wider text-gray-600 mb-2"
-                  >
-                    Enfoque
-                  </h4>
-                  <p class="text-sm text-gray-700">
-                    Marcas juveniles, proyectos creativos, cultura pop, tech
-                    emergente.
-                  </p>
-                </div>
-                <div>
-                  <h4
-                    class="text-xs uppercase tracking-wider text-gray-600 mb-2"
-                  >
-                    Estética
-                  </h4>
-                  <p class="text-sm text-gray-700">
-                    Bold, vibrante, maximalista.
-                  </p>
-                </div>
-                <div>
-                  <h4
-                    class="text-xs uppercase tracking-wider text-gray-600 mb-2"
-                  >
-                    Sensación
-                  </h4>
-                  <p class="text-sm text-gray-700">
-                    Intensidad, rebeldía controlada, identidad fuerte.
-                  </p>
-                </div>
-              </div>
-              <div class="mb-8">
-                <h4 class="text-xs uppercase tracking-wider text-gray-600 mb-3">
-                  Paleta
-                </h4>
-                <div class="flex gap-2">
-                  <div
-                    class="color-swatch w-10 h-10 rounded-full cursor-pointer"
-                    style="background: #8b7355"
-                    title="Marrón primario"
-                  ></div>
-                  <div
-                    class="color-swatch w-10 h-10 rounded-full cursor-pointer"
-                    style="background: #6b4423"
-                    title="Marrón oscuro"
-                  ></div>
-                  <div
-                    class="color-swatch w-10 h-10 rounded-full cursor-pointer"
-                    style="background: #c9a876"
-                    title="Marrón claro"
-                  ></div>
-                  <div
-                    class="color-swatch w-10 h-10 rounded-full cursor-pointer"
-                    style="background: #f5efe7; border: 1px solid #333"
-                    title="Beige"
-                  ></div>
-                </div>
-              </div>
-              <button
-                class="btn-universe w-full py-3 bg-gradient-to-r from-amber-700 to-amber-900 text-white rounded-xl font-semibold hover:opacity-90 transition-opacity"
+              <p
+                class="text-gray-700 text-xs md:text-sm mb-4 md:mb-6 font-semibold"
+                style="color: #f90f00"
               >
-                Ver universo gamer →
-              </button>
+                Estética retro-futurista y cultura digital.
+              </p>
+              <div class="mb-6 md:mb-8">
+                <p class="text-xs md:text-sm text-gray-700 leading-relaxed">
+                  Dirección visual audaz, identidad para proyectos juveniles y
+                  marcas que buscan impacto visual fuerte.
+                </p>
+              </div>
+              <a
+                href="https://delulufuturedev2.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-universe inline-block w-full py-3 text-white rounded-xl font-semibold hover:opacity-90 transition-opacity text-center shadow-md text-sm md:text-base"
+                style="background-color: #f90f00"
+              >
+                Ver universo gamer
+              </a>
             </article>
-            <!-- Rótulos Universe -->
+            <!-- Rótulos Universe - Yellow -->
             <article
-              class="universe-card card-rotulos relative rounded-3xl p-8 border border-amber-600/30 reveal"
+              class="universe-card card-rotulos relative rounded-3xl p-6 md:p-8 border-2 reveal"
               style="transition-delay: 0.15s"
             >
-              <div class="absolute top-6 right-6 text-4xl">🎨</div>
-              <span
-                class="inline-block px-3 py-1 bg-amber-600/20 text-amber-900 text-xs font-semibold rounded-full mb-6"
-                >UNIVERSO 02</span
+              <h3
+                class="font-display text-2xl md:text-3xl font-bold mb-3"
+                style="color: #f7bb20"
               >
-              <h3 class="font-display text-3xl font-bold mb-2 text-amber-900">
                 DELULU RÓTULOS
               </h3>
-              <p class="text-gray-700 text-sm mb-6">
-                Cultura popular mexicana + diseño contemporáneo
-              </p>
-              <div class="space-y-4 mb-8">
-                <div>
-                  <h4
-                    class="text-xs uppercase tracking-wider text-gray-600 mb-2"
-                  >
-                    Enfoque
-                  </h4>
-                  <p class="text-sm text-gray-700">
-                    Proyectos culturales, identidad local, marcas con raíz.
-                  </p>
-                </div>
-                <div>
-                  <h4
-                    class="text-xs uppercase tracking-wider text-gray-600 mb-2"
-                  >
-                    Estética
-                  </h4>
-                  <p class="text-sm text-gray-700">
-                    Colorida, artesanal, identidad popular refinada.
-                  </p>
-                </div>
-                <div>
-                  <h4
-                    class="text-xs uppercase tracking-wider text-gray-600 mb-2"
-                  >
-                    Sensación
-                  </h4>
-                  <p class="text-sm text-gray-700">
-                    Orgullo cultural, energía callejera, identidad viva.
-                  </p>
-                </div>
-              </div>
-              <div class="mb-8">
-                <h4 class="text-xs uppercase tracking-wider text-gray-600 mb-3">
-                  Paleta
-                </h4>
-                <div class="flex gap-2">
-                  <div
-                    class="color-swatch w-10 h-10 rounded-full cursor-pointer"
-                    style="background: #c9a876"
-                    title="Terracota"
-                  ></div>
-                  <div
-                    class="color-swatch w-10 h-10 rounded-full cursor-pointer"
-                    style="background: #a0826d"
-                    title="Marrón tierra"
-                  ></div>
-                  <div
-                    class="color-swatch w-10 h-10 rounded-full cursor-pointer"
-                    style="background: #8b7355"
-                    title="Marrón cálido"
-                  ></div>
-                  <div
-                    class="color-swatch w-10 h-10 rounded-full cursor-pointer"
-                    style="background: #d4c5b9"
-                    title="Tostado claro"
-                  ></div>
-                </div>
-              </div>
-              <button
-                class="btn-universe w-full py-3 bg-gradient-to-r from-amber-600 to-amber-800 text-white rounded-xl font-semibold hover:opacity-90 transition-opacity"
+              <p
+                class="text-gray-700 text-xs md:text-sm mb-4 md:mb-6 font-semibold"
+                style="color: #f7bb20"
               >
-                Ver universo rótulos →
-              </button>
+                Cultura popular mexicana reinterpretada.
+              </p>
+              <div class="mb-6 md:mb-8">
+                <p class="text-xs md:text-sm text-gray-700 leading-relaxed">
+                  Color, tradición y tipografía como narrativa visual para
+                  marcas con identidad local y carácter propio.
+                </p>
+              </div>
+              <a
+                href="https://delulufuturedevrotulosneon.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-universe inline-block w-full py-3 text-white rounded-xl font-semibold hover:opacity-90 transition-opacity text-center shadow-md text-sm md:text-base"
+                style="background-color: #f7bb20"
+              >
+                Ver universo rótulos
+              </a>
             </article>
-            <!-- Minimal Universe -->
+            <!-- For Everyone Universe - Green -->
             <article
-              class="universe-card card-minimal relative rounded-3xl p-8 border border-amber-800/30 reveal"
+              class="universe-card card-minimal relative rounded-3xl p-6 md:p-8 border-2 reveal"
               style="transition-delay: 0.3s"
             >
-              <div class="absolute top-6 right-6 text-4xl">⚡</div>
-              <span
-                class="inline-block px-3 py-1 bg-amber-800/20 text-amber-950 text-xs font-semibold rounded-full mb-6"
-                >UNIVERSO 03</span
+              <h3
+                class="font-display text-2xl md:text-3xl font-bold mb-3"
+                style="color: #1fa524"
               >
-              <h3 class="font-display text-3xl font-bold mb-2 text-amber-950">
-                DELULU MINIMAL
+                DELULU FOR EVERYONE
               </h3>
-              <p class="text-gray-700 text-sm mb-6">Design for Everyone</p>
-              <div class="space-y-4 mb-8">
-                <div>
-                  <h4
-                    class="text-xs uppercase tracking-wider text-gray-600 mb-2"
-                  >
-                    Enfoque
-                  </h4>
-                  <p class="text-sm text-gray-700">
-                    Web, apps, sistemas visuales pensados para diversidad real.
-                  </p>
-                </div>
-                <div>
-                  <h4
-                    class="text-xs uppercase tracking-wider text-gray-600 mb-2"
-                  >
-                    Estética
-                  </h4>
-                  <p class="text-sm text-gray-700">
-                    Minimalismo estratégico, jerarquía clara, accesibilidad.
-                  </p>
-                </div>
-                <div>
-                  <h4
-                    class="text-xs uppercase tracking-wider text-gray-600 mb-2"
-                  >
-                    Sensación
-                  </h4>
-                  <p class="text-sm text-gray-700">
-                    Confianza, claridad, profesionalismo inclusivo.
-                  </p>
-                </div>
-              </div>
-              <div class="mb-8">
-                <h4 class="text-xs uppercase tracking-wider text-gray-600 mb-3">
-                  Paleta
-                </h4>
-                <div class="flex gap-2">
-                  <div
-                    class="color-swatch w-10 h-10 rounded-full cursor-pointer"
-                    style="background: #1a1a1a"
-                    title="Negro profundo"
-                  ></div>
-                  <div
-                    class="color-swatch w-10 h-10 rounded-full cursor-pointer"
-                    style="background: #404040"
-                    title="Gris oscuro"
-                  ></div>
-                  <div
-                    class="color-swatch w-10 h-10 rounded-full cursor-pointer"
-                    style="background: #e8e8e8"
-                    title="Gris claro"
-                  ></div>
-                  <div
-                    class="color-swatch w-10 h-10 rounded-full cursor-pointer"
-                    style="background: #f5efe7"
-                    title="Blanco cálido"
-                  ></div>
-                </div>
-              </div>
-              <button
-                class="btn-universe w-full py-3 bg-gradient-to-r from-amber-800 to-amber-950 text-white rounded-xl font-semibold hover:opacity-90 transition-opacity"
+              <p
+                class="text-gray-700 text-xs md:text-sm mb-4 md:mb-6 font-semibold"
+                style="color: #1fa524"
               >
-                Ver universo minimal →
-              </button>
+                Diseño digital minimalista e inclusivo.
+              </p>
+              <div class="mb-6 md:mb-8">
+                <p class="text-xs md:text-sm text-gray-700 leading-relaxed">
+                  Web y productos digitales pensados desde la accesibilidad,
+                  claridad y experiencia de usuario.
+                </p>
+              </div>
+              <a
+                href="https://rotulosweb.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-universe inline-block w-full py-3 text-white rounded-xl font-semibold hover:opacity-90 transition-opacity text-center shadow-md text-sm md:text-base"
+                style="background-color: #1fa524"
+              >
+                Ver diseño inclusivo
+              </a>
             </article>
           </div>
         </div>
       </section>
       <!-- CTA Section -->
-      <section id="contact" class="py-32 px-6 relative overflow-hidden">
-        <div
-          class="absolute inset-0 bg-gradient-to-t from-amber-700/10 via-transparent to-transparent"
-        ></div>
+      <section
+        id="contact"
+        class="py-16 md:py-32 px-4 md:px-6 relative overflow-hidden bg-white"
+      >
         <div class="max-w-4xl mx-auto text-center relative z-10 reveal">
-          <div class="text-6xl mb-8">✨</div>
           <h2
-            class="font-display text-4xl md:text-5xl font-bold mb-6 text-gray-900"
+            class="font-display text-2xl md:text-5xl font-bold mb-4 md:mb-6"
+            style="color: #f90f00"
           >
             ¿Listo para crear tu universo?
           </h2>
-          <p class="text-gray-700 text-lg mb-10 max-w-2xl mx-auto">
+          <p
+            class="text-gray-700 text-base md:text-lg mb-8 md:mb-10 max-w-2xl mx-auto px-2"
+          >
             Cada proyecto comienza con una conversación. Cuéntanos qué necesitas
             y encontremos juntos el universo perfecto para tu marca.
           </p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <button
-              class="btn-universe px-8 py-4 bg-gray-900 text-white rounded-full font-semibold text-lg hover:scale-105 transition-transform"
+          <div
+            class="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center px-2"
+          >
+            <a
+              href="mailto:indigolilobarcena@delulufuture.dev"
+              class="btn-universe px-6 md:px-8 py-3 md:py-4 text-white rounded-full font-semibold text-base md:text-lg hover:scale-105 transition-transform shadow-lg inline-block"
+              style="background-color: #f90f00"
             >
               Iniciar proyecto
-            </button>
-            <button
-              class="px-8 py-4 bg-gray-200/50 text-gray-900 rounded-full font-semibold text-lg hover:bg-gray-200 transition-colors border border-gray-400"
+            </a>
+            <a
+              href="#universes"
+              class="px-6 md:px-8 py-3 md:py-4 text-gray-900 rounded-full font-semibold text-base md:text-lg hover:opacity-80 transition-colors border-2 inline-block"
+              style="
+                background-color: rgba(249, 15, 0, 0.2);
+                border-color: #f90f00;
+              "
             >
               Ver portafolio
-            </button>
+            </a>
           </div>
         </div>
       </section>
       <!-- Footer -->
-      <footer class="py-12 px-6 border-t border-gray-300">
+      <footer
+        class="py-8 md:py-12 px-4 md:px-6 bg-white"
+        style="border-top: 4px solid #1fa524"
+      >
         <div class="max-w-7xl mx-auto">
           <div
-            class="flex flex-col md:flex-row items-center justify-between gap-6"
+            class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-8 md:mb-12"
           >
-            <div class="flex items-center gap-3">
-              <div
-                class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-700 via-amber-600 to-amber-800 flex items-center justify-center"
-              >
-                <span class="text-white font-bold text-lg">D</span>
+            <!-- Brand -->
+            <div>
+              <div class="flex items-center gap-2 md:gap-3 mb-4 flex-wrap">
+                <img
+                  src="https://raw.githubusercontent.com/frontenddeveloper2025dev/deluluminimal/refs/heads/main/DELULU%203%20COLORS.png"
+                  alt="Delulu Logo"
+                  class="h-10 md:h-12 w-auto"
+                  loading="lazy"
+                  onerror="console.error('Logo failed to load:', this.src); this.style.display='none';"
+                />
+                <span
+                  class="font-display font-bold text-sm md:text-base"
+                  style="color: #1fa524"
+                  >DELULU</span
+                >
               </div>
-              <span class="font-display font-bold text-gray-900"
-                >DELULU FUTURE DEV</span
+              <p
+                class="text-xs font-semibold leading-relaxed"
+                style="color: #1fa524"
               >
+                Nómadas digitales<br />
+                Atención únicamente online
+              </p>
             </div>
-            <p class="text-gray-600 text-sm">
+            <!-- Contact Info -->
+            <div>
+              <h4
+                class="font-display font-bold mb-3 md:mb-4 text-xs md:text-sm"
+                style="color: #1fa524"
+              >
+                CONTACTO
+              </h4>
+              <ul
+                class="space-y-2 md:space-y-3 text-xs md:text-sm"
+                style="color: #1fa524"
+              >
+                <li>
+                  <a
+                    href="mailto:indigolilobarcena@delulufuture.dev"
+                    class="hover:opacity-70 transition-opacity underline font-semibold"
+                  >
+                    Email
+                  </a>
+                  <p class="text-xs">indigolilobarcena@delulufuture.dev</p>
+                </li>
+                <li>
+                  <a
+                    href="https://wa.me/525663672588"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:opacity-70 transition-opacity underline font-semibold"
+                  >
+                    WhatsApp 1
+                  </a>
+                  <p class="text-xs">+56 6367 2588</p>
+                </li>
+                <li>
+                  <a
+                    href="https://wa.me/525659987003"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:opacity-70 transition-opacity underline font-semibold"
+                  >
+                    WhatsApp 2
+                  </a>
+                  <p class="text-xs">+56 5998 7003</p>
+                </li>
+                <li
+                  class="font-semibold text-xs pt-2"
+                  style="border-top: 1px solid #1fa524"
+                >
+                  Disponibilidad por Zoom
+                </li>
+              </ul>
+            </div>
+            <!-- Social Links -->
+            <div>
+              <h4
+                class="font-display font-bold mb-3 md:mb-4 text-xs md:text-sm"
+                style="color: #1fa524"
+              >
+                REDES SOCIALES
+              </h4>
+              <div class="flex flex-wrap gap-2">
+                <a
+                  href="https://www.instagram.com/delulufuturedev/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="px-3 py-2 hover:opacity-80 transition-opacity font-bold text-xs rounded-full text-white"
+                  style="background-color: #1fa524"
+                  title="Instagram"
+                >
+                  Instagram
+                </a>
+                <a
+                  href="https://mx.pinterest.com/delulutrend/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="px-3 py-2 hover:opacity-80 transition-opacity font-bold text-xs rounded-full text-white"
+                  style="background-color: #1fa524"
+                  title="Pinterest"
+                >
+                  Pinterest
+                </a>
+                <a
+                  href="https://github.com/delulutrendestudio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="px-3 py-2 hover:opacity-80 transition-opacity font-bold text-xs rounded-full text-white"
+                  style="background-color: #1fa524"
+                  title="GitHub"
+                >
+                  GitHub
+                </a>
+                <a
+                  href="https://www.tiktok.com/@delulufuturedev/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="px-3 py-2 hover:opacity-80 transition-opacity font-bold text-xs rounded-full text-white"
+                  style="background-color: #1fa524"
+                  title="TikTok"
+                >
+                  TikTok
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Copyright -->
+          <div
+            class="pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs md:text-sm"
+            style="border-top: 2px solid #1fa524"
+          >
+            <p
+              class="font-semibold text-center md:text-left"
+              style="color: #1fa524"
+            >
               © 2025 Delulu Future Dev. Creatividad con intención.
             </p>
-            <div class="flex gap-4">
-              <a
-                href="#"
-                class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center hover:bg-gray-300 transition-colors"
+            <div class="flex gap-3">
+              <span
+                class="px-3 py-1 font-bold rounded-full text-white"
+                style="background-color: #1fa524"
+                >Online</span
               >
-                <span>📸</span>
-              </a>
-              <a
-                href="#"
-                class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center hover:bg-gray-300 transition-colors"
+              <span
+                class="px-3 py-1 font-bold rounded-full text-white"
+                style="background-color: #1fa524"
+                >Remoto</span
               >
-                <span>💼</span>
-              </a>
-              <a
-                href="#"
-                class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center hover:bg-gray-300 transition-colors"
-              >
-                <span>✉️</span>
-              </a>
             </div>
           </div>
         </div>
       </footer>
     </div>
+    <!-- Chatbot Widget -->
+    <div class="chatbot-widget">
+      <button class="chatbot-toggle" id="chatbot-toggle">💬</button>
+      <div class="chatbot-window" id="chatbot-window">
+        <div class="chat-header">
+          <div>
+            <h3 id="chat-bot-name">Delulu Bot</h3>
+            <p>Aquí para ayudarte</p>
+          </div>
+          <button class="close-chat" id="close-chat">✕</button>
+        </div>
+        <div class="messages-area" id="messages-container">
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              height: 100%;
+              color: #999;
+              gap: 12px;
+              text-align: center;
+              padding: 16px;
+            "
+          >
+            <div style="font-size: 2rem">👋</div>
+            <p style="font-weight: 600; margin: 0">¡Bienvenido!</p>
+            <p
+              id="chat-welcome"
+              style="
+                font-size: 0.85rem;
+                margin: 0;
+                max-width: 250px;
+                margin-bottom: 12px;
+              "
+            >
+              ¿Cómo podemos ayudarte hoy?
+            </p>
+            <div id="quick-questions">
+              <button
+                class="quick-question-btn"
+                onclick="sendQuickQuestion('¿Qué servicios ofrecen?')"
+              >
+                🎨 ¿Qué servicios ofrecen?
+              </button>
+              <button
+                class="quick-question-btn"
+                onclick="sendQuickQuestion('Cuéntame sobre los 3 universos')"
+              >
+                🌌 Cuéntame sobre los 3 universos
+              </button>
+              <button
+                class="quick-question-btn"
+                onclick="sendQuickQuestion('¿Cómo contacto?')"
+              >
+                📞 ¿Cómo contacto?
+              </button>
+              <button
+                class="quick-question-btn"
+                onclick="sendQuickQuestion('¿Cuál es tu proceso de trabajo?')"
+              >
+                🔄 ¿Cuál es tu proceso?
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="chat-input-area">
+          <form
+            class="chat-input-form"
+            id="chat-form"
+            onsubmit="handleSendMessage(event)"
+          >
+            <input
+              type="text"
+              class="chat-input-field"
+              id="message-input"
+              placeholder="Escribe aquí..."
+              autocomplete="off"
+            />
+            <button type="submit" class="chat-send-btn" id="send-btn">
+              Enviar
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
     <script>
+      // Mobile Menu Functions
+      function toggleMobileMenu() {
+        const menu = document.getElementById("mobile-menu");
+        menu.classList.toggle("hidden");
+      }
+
+      function closeMobileMenu() {
+        const menu = document.getElementById("mobile-menu");
+        menu.classList.add("hidden");
+      }
+
+      document
+        .getElementById("mobile-menu-btn")
+        .addEventListener("click", toggleMobileMenu);
+
+      // Close menu when clicking outside
+      document.addEventListener("click", (e) => {
+        const menu = document.getElementById("mobile-menu");
+        const btn = document.getElementById("mobile-menu-btn");
+        if (
+          !menu.contains(e.target) &&
+          !btn.contains(e.target) &&
+          !menu.classList.contains("hidden")
+        ) {
+          menu.classList.add("hidden");
+        }
+      });
+
+      // Chatbot Configuration
+      const chatbotConfig = {
+        bot_name: "Delulu Bot",
+        welcome_message: "¿Cómo podemos ayudarte hoy?",
+        company_name: "Delulu Future Dev",
+      };
+
+      let isWaitingForResponse = false;
+
+      // Knowledge Base
+      const knowledgeBase = {
+        "hola|hi|hey|buenos días|buenas noches|buen día":
+          "Hola! 👋 Bienvenido a Delulu Future Dev, un estudio creativo independiente enfocado en diseño digital, identidad visual y experiencias inclusivas. ¿En qué puedo ayudarte?",
+        "precio|costo|valor|cuánto cuesta|presupuesto|tarifas":
+          "Nuestros precios varían según el proyecto. Contáctanos para obtener un presupuesto personalizado:\n📧 indigolilobarcena@delulufuture.dev\n📱 +56 6367 2588 (WhatsApp)\n📱 +56 5998 7003 (WhatsApp)",
+        "servicios|qué ofrecen|qué hacen|qué servicios|ofertas":
+          "Ofrecemos:\n\n🎨 Dirección creativa\n🏢 Branding estratégico\n💻 Diseño web & producto digital\n🌈 Cultura visual\n\n¿Cuál te interesa conocer más?",
+        "contacto|teléfono|email|whatsapp|cómo contactar":
+          "Contáctanos por:\n\n📧 Email: indigolilobarcena@delulufuture.dev\n📱 WhatsApp 1: +56 6367 2588\n📱 WhatsApp 2: +56 5998 7003\n💻 También disponibles por Zoom",
+        "horario|disponibilidad|atención|cuándo atienden":
+          "Disponibles únicamente online 🌐\n\nAtención por Zoom\n¡Nos adaptamos a tu zona horaria!",
+        "universo|gamer|rótulos|everyone|lenguajes visuales":
+          "Tenemos 3 universos visuales distintos:\n\n🎮 DELULU GAMER\nEstética retro-futurista y cultura digital\n\n🎨 DELULU RÓTULOS\nCultura popular mexicana reinterpretada\n\n✨ DELULU FOR EVERYONE\nDiseño minimalista e inclusivo\n\n¿Cuál te llama más la atención?",
+        "portafolio|proyectos|ver trabajos|galería":
+          "Puedes ver nuestros trabajos en cada universo:\n\n🎮 delulufuturedev2.vercel.app\n🎨 delulufuturedevrotulosneon.vercel.app\n✨ rotulosweb.vercel.app",
+        "equipo|quiénes somos|sobre ustedes|staff|equipo creativo":
+          "Somos Delulu Future Dev, un estudio creativo independiente de nómadas digitales 🌍\n\nNuestro enfoque: Confianza + multidisciplina + intención\n\n¿Quieres conocer más sobre nuestro proceso?",
+        "gamer|intensidad|retro|futurista":
+          "DELULU GAMER es nuestro universo más audaz y vibrante 🎮\n\nPerfecto para:\n• Proyectos juveniles\n• Marcas con impacto visual fuerte\n• Identidades digitales intensas\n\n¿Te interesa este lenguaje visual?",
+        "rótulos|mexicana|cultura|tradición|neon":
+          "DELULU RÓTULOS reinterpreta la cultura popular mexicana 🎨\n\nPerfecto para:\n• Marcas con identidad local\n• Proyectos con carácter propio\n• Narrativas visuales coloridas\n\n¿Quieres explorar este universo?",
+        "everyone|inclusivo|accesible|minimalista|web":
+          "DELULU FOR EVERYONE es nuestro enfoque inclusivo ✨\n\nPerfecto para:\n• Diseño web accesible\n• Productos digitales claros\n• Experiencias de usuario óptimas\n\n¿Este es tu tipo de diseño?",
+        "gracias|thank you|muchas gracias|thx":
+          "¡De nada! 😊 ¿Hay algo más en lo que pueda ayudarte?",
+        "adiós|bye|hasta luego|chao|nos vemos":
+          "¡Hasta luego! 👋 Si tienes más preguntas, aquí estoy para ayudarte. ¡Que vaya bien!",
+        "cómo trabajan|proceso|metodología|workflow":
+          "Nuestro proceso se basa en:\n\n1️⃣ Conversación inicial\n2️⃣ Análisis y estrategia\n3️⃣ Diseño y creación\n4️⃣ Refinamiento\n5️⃣ Entrega y soporte\n\nCada proyecto es único. ¡Cuéntanos tu idea!",
+        "nómadas|dónde están|ubicación|localización":
+          "Somos nómadas digitales 🌍 - Trabajamos desde cualquier parte del mundo.\n\nAtenemos únicamente online por Zoom para adaptarnos a tu zona horaria.",
+        "proyecto|quiero un proyecto|necesito diseño|quisiera trabajar":
+          "¡Excelente! 🚀\n\nPara iniciar un proyecto, contáctanos:\n\n📧 indigolilobarcena@delulufuture.dev\n📱 +56 6367 2588\n📱 +56 5998 7003\n\n¡Cuéntanos tu idea!",
+      };
+
+      function matchIntent(message) {
+        const lower = message.toLowerCase();
+        for (const [patterns, response] of Object.entries(knowledgeBase)) {
+          if (patterns.split("|").some((p) => lower.includes(p))) {
+            return response;
+          }
+        }
+        return "Interesante pregunta. ¿Podrías darme más detalles? También puedo ayudarte con información sobre nuestros servicios, universos visuales, contacto o disponibilidad.";
+      }
+
+      function formatTime() {
+        const now = new Date();
+        return now.toLocaleTimeString("es-ES", {
+          hour: "2-digit",
+          minute: "2-digit",
+        });
+      }
+
+      function removeWelcomeScreen() {
+        const container = document.getElementById("messages-container");
+        const welcomeDiv = container.querySelector('[style*="height: 100%"]');
+        if (welcomeDiv) {
+          welcomeDiv.remove();
+        }
+      }
+
+      function addMessage(text, isUser) {
+        removeWelcomeScreen();
+
+        const container = document.getElementById("messages-container");
+        const msg = document.createElement("div");
+        msg.className = `message ${isUser ? "user" : "bot"}`;
+
+        const avatar = document.createElement("div");
+        avatar.className = "message-avatar";
+        avatar.textContent = isUser ? "T" : "D";
+
+        const content = document.createElement("div");
+        content.className = "message-content";
+
+        const bubble = document.createElement("div");
+        bubble.className = "message-bubble";
+        bubble.textContent = text;
+
+        const time = document.createElement("div");
+        time.className = "message-time";
+        time.textContent = formatTime();
+
+        content.appendChild(bubble);
+        content.appendChild(time);
+
+        if (isUser) {
+          msg.appendChild(content);
+          msg.appendChild(avatar);
+        } else {
+          msg.appendChild(avatar);
+          msg.appendChild(content);
+        }
+
+        container.appendChild(msg);
+        container.scrollTop = container.scrollHeight;
+      }
+
+      function showTyping() {
+        const container = document.getElementById("messages-container");
+        const msg = document.createElement("div");
+        msg.className = "message bot";
+        msg.id = "typing-msg";
+
+        const avatar = document.createElement("div");
+        avatar.className = "message-avatar";
+        avatar.textContent = "D";
+
+        const typing = document.createElement("div");
+        typing.className = "typing-indicator";
+
+        for (let i = 0; i < 3; i++) {
+          const dot = document.createElement("div");
+          dot.className = "typing-dot";
+          typing.appendChild(dot);
+        }
+
+        msg.appendChild(avatar);
+        msg.appendChild(typing);
+        container.appendChild(msg);
+        container.scrollTop = container.scrollHeight;
+      }
+
+      function sendQuickQuestion(question) {
+        addMessage(question, true);
+        isWaitingForResponse = true;
+        document.getElementById("send-btn").disabled = true;
+
+        showTyping();
+
+        setTimeout(() => {
+          document.getElementById("typing-msg")?.remove();
+          addMessage(matchIntent(question), false);
+          isWaitingForResponse = false;
+          document.getElementById("send-btn").disabled = false;
+        }, 300 + Math.random() * 1200);
+      }
+
+      function handleSendMessage(e) {
+        e.preventDefault();
+
+        const input = document.getElementById("message-input");
+        const text = input.value.trim();
+
+        if (!text || isWaitingForResponse) return;
+
+        addMessage(text, true);
+        input.value = "";
+
+        isWaitingForResponse = true;
+        document.getElementById("send-btn").disabled = true;
+
+        showTyping();
+
+        setTimeout(() => {
+          document.getElementById("typing-msg")?.remove();
+          addMessage(matchIntent(text), false);
+          isWaitingForResponse = false;
+          document.getElementById("send-btn").disabled = false;
+          input.focus();
+        }, 300 + Math.random() * 1200);
+      }
+
+      // Chatbot Toggle
+      document
+        .getElementById("chatbot-toggle")
+        .addEventListener("click", () => {
+          const window = document.getElementById("chatbot-window");
+          const btn = document.getElementById("chatbot-toggle");
+          window.classList.toggle("active");
+          btn.classList.toggle("active");
+          if (window.classList.contains("active")) {
+            setTimeout(
+              () => document.getElementById("message-input").focus(),
+              100
+            );
+          }
+        });
+
+      document.getElementById("close-chat").addEventListener("click", () => {
+        document.getElementById("chatbot-window").classList.remove("active");
+        document.getElementById("chatbot-toggle").classList.remove("active");
+      });
+
+      // Config Updates
+      async function onConfigChange(newConfig) {
+        Object.assign(chatbotConfig, newConfig);
+        const name = document.getElementById("chat-bot-name");
+        if (name) name.textContent = chatbotConfig.bot_name;
+        const welcome = document.getElementById("chat-welcome");
+        if (welcome) welcome.textContent = chatbotConfig.welcome_message;
+      }
+
+      function mapToCapabilities(cfg) {
+        return {
+          recolorables: [],
+          borderables: [],
+          fontEditable: undefined,
+          fontSizeable: undefined,
+        };
+      }
+
+      function mapToEditPanelValues(cfg) {
+        return new Map([
+          ["bot_name", chatbotConfig.bot_name],
+          ["welcome_message", chatbotConfig.welcome_message],
+        ]);
+      }
+
+      // Original Landing Config
       const defaultConfig = {
-        main_title: "Delulu Future Dev",
         main_subtitle:
           "Creatividad estratégica para marcas que quieren destacar sin excluir.",
         cta_text: "Explorar universos",
         about_title: "¿Quiénes somos?",
-        primary_color: "#8B7355",
-        secondary_color: "#F5EFE7",
+        bot_name: "Delulu Bot",
+        welcome_message: "¿Cómo podemos ayudarte hoy?",
+        primary_color: "#007fee",
+        secondary_color: "#ffffff",
         text_color: "#1A1A1A",
-        accent_color: "#C9A876",
-        surface_color: "#D4C5B9",
+        accent_color: "#f7bb20",
+        surface_color: "#f90f00",
         font_family: "Syne",
         font_size: 16,
       };
 
       let config = { ...defaultConfig };
 
-      async function onConfigChange(newConfig) {
+      async function onLandingConfigChange(newConfig) {
         config = { ...config, ...newConfig };
-
-        const heroTitle = document.getElementById("hero-title");
-        if (heroTitle)
-          heroTitle.textContent = config.main_title || defaultConfig.main_title;
 
         const heroSubtitle = document.getElementById("hero-subtitle");
         if (heroSubtitle)
@@ -885,7 +1561,7 @@
             config.about_title || defaultConfig.about_title;
 
         const customFont = config.font_family || defaultConfig.font_family;
-        document.querySelectorAll(".font-display, h1, h2, h3").forEach((el) => {
+        document.querySelectorAll(".font-display, h2, h3").forEach((el) => {
           el.style.fontFamily = `${customFont}, sans-serif`;
         });
 
@@ -900,39 +1576,13 @@
           "--text-primary",
           config.text_color || defaultConfig.text_color
         );
-        document.documentElement.style.setProperty(
-          "--accent-gamer",
-          config.primary_color || defaultConfig.primary_color
-        );
+
+        await onConfigChange(newConfig);
       }
 
-      function mapToCapabilities(cfg) {
+      function mapToCapabilitiesFull(cfg) {
         return {
           recolorables: [
-            {
-              get: () => cfg.secondary_color || defaultConfig.secondary_color,
-              set: (value) => {
-                cfg.secondary_color = value;
-                if (window.elementSdk)
-                  window.elementSdk.setConfig({ secondary_color: value });
-              },
-            },
-            {
-              get: () => cfg.surface_color || defaultConfig.surface_color,
-              set: (value) => {
-                cfg.surface_color = value;
-                if (window.elementSdk)
-                  window.elementSdk.setConfig({ surface_color: value });
-              },
-            },
-            {
-              get: () => cfg.text_color || defaultConfig.text_color,
-              set: (value) => {
-                cfg.text_color = value;
-                if (window.elementSdk)
-                  window.elementSdk.setConfig({ text_color: value });
-              },
-            },
             {
               get: () => cfg.primary_color || defaultConfig.primary_color,
               set: (value) => {
@@ -947,6 +1597,30 @@
                 cfg.accent_color = value;
                 if (window.elementSdk)
                   window.elementSdk.setConfig({ accent_color: value });
+              },
+            },
+            {
+              get: () => cfg.surface_color || defaultConfig.surface_color,
+              set: (value) => {
+                cfg.surface_color = value;
+                if (window.elementSdk)
+                  window.elementSdk.setConfig({ surface_color: value });
+              },
+            },
+            {
+              get: () => cfg.secondary_color || defaultConfig.secondary_color,
+              set: (value) => {
+                cfg.secondary_color = value;
+                if (window.elementSdk)
+                  window.elementSdk.setConfig({ secondary_color: value });
+              },
+            },
+            {
+              get: () => cfg.text_color || defaultConfig.text_color,
+              set: (value) => {
+                cfg.text_color = value;
+                if (window.elementSdk)
+                  window.elementSdk.setConfig({ text_color: value });
               },
             },
           ],
@@ -970,32 +1644,34 @@
         };
       }
 
-      function mapToEditPanelValues(cfg) {
+      function mapToEditPanelValuesFull(cfg) {
         return new Map([
-          ["main_title", cfg.main_title || defaultConfig.main_title],
           ["main_subtitle", cfg.main_subtitle || defaultConfig.main_subtitle],
           ["cta_text", cfg.cta_text || defaultConfig.cta_text],
           ["about_title", cfg.about_title || defaultConfig.about_title],
+          ["bot_name", cfg.bot_name || defaultConfig.bot_name],
+          [
+            "welcome_message",
+            cfg.welcome_message || defaultConfig.welcome_message,
+          ],
         ]);
       }
 
       if (window.elementSdk) {
         window.elementSdk.init({
           defaultConfig,
-          onConfigChange,
-          mapToCapabilities,
-          mapToEditPanelValues,
+          onConfigChange: onLandingConfigChange,
+          mapToCapabilities: mapToCapabilitiesFull,
+          mapToEditPanelValues: mapToEditPanelValuesFull,
         });
       }
 
+      // Scroll Reveal
       function revealOnScroll() {
-        const reveals = document.querySelectorAll(".reveal");
-        reveals.forEach((el) => {
+        document.querySelectorAll(".reveal").forEach((el) => {
           const windowHeight = window.innerHeight;
           const elementTop = el.getBoundingClientRect().top;
-          const revealPoint = 150;
-
-          if (elementTop < windowHeight - revealPoint) {
+          if (elementTop < windowHeight - 150) {
             el.classList.add("active");
           }
         });
@@ -1021,7 +1697,7 @@
           if (b) {
             var d = b.createElement("script");
             d.innerHTML =
-              "window.__CF$cv$params={r:'9cd0a7a8a17ad08d',t:'MTc3MDk0NzIxNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+              "window.__CF$cv$params={r:'9cd21ce2707ad08d',t:'MTc3MDk2MjUwNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
             b.getElementsByTagName("head")[0].appendChild(d);
           }
         }
